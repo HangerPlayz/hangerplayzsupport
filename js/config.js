@@ -38,8 +38,8 @@ HP.config = {
     { id: "instagram", name: "Instagram", handle: "@hangerplayz", blurb: "Reels & Story", url: "https://www.instagram.com/hangerplayz/" },
     { id: "youtube", name: "YouTube", handle: "@HangerPlayz", blurb: "Short & Stream", url: "https://youtube.com/@HangerPlayz" },
     /* Placeholders — put a real URL in `url` and the card becomes a live link. */
-    { id: "curseforge", name: "CurseForge", handle: "Coming soon", blurb: "Mods & Plugin", url: "https://www.curseforge.com/members/hangerplayz/projects" },
-    { id: "discord", name: "Discord", handle: "Coming soon", blurb: "Support", url: "https://discord.gg/rEtEK8uhrY" },
+    { id: "curseforge", name: "CurseForge", handle: "HangerPlayz", blurb: "Mods & Plugin", url: "https://www.curseforge.com/members/hangerplayz/projects" },
+    { id: "discord", name: "Discord", handle: "hanger.jar", blurb: "Support", url: "https://discord.gg/rEtEK8uhrY" },
   ],
 
   /* ---- Contact (optional). Leave "" to hide. ------------------------------ */
