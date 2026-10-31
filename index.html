@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Support HangerPlayz — Minecraft Mods, Plugins &amp; Content</title>
+  <meta name="description" content="Support HangerPlayz — Minecraft content, Fabric mods, plugins and community-focused development. Pay securely with any UPI app.">
+  <meta name="theme-color" content="#090611">
+  <link rel="icon" type="image/png" href="assets/images/logo-face.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#support">Skip to support section</a>
+
+  <!-- Loading screen (uses logo #3). Auto-hides via CSS even if JS fails. -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img src="assets/images/logo-live.gif" width="120" height="120" alt="">
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner" aria-label="Main">
+      <a class="brand" href="#home" aria-label="HangerPlayz home">
+        <img src="assets/images/logo-face.png" width="36" height="36" alt="HangerPlayz logo">
+        <span>HangerPlayz</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-nav="home">Home</a></li>
+        <li><a href="#support" data-nav="support">Support</a></li>
+        <li><a href="#leaderboard" data-nav="leaderboard">Leaderboard</a></li>
+        <li><a href="#milestones" data-nav="milestones">Milestones</a></li>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#faq" data-nav="faq">FAQ</a></li>
+      </ul>
+      <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" data-section="home">
+      <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Minecraft · Fabric mods · Plugins</p>
+          <h1 class="reveal">Support <span class="grad-text">HangerPlayz</span></h1>
+          <p class="lead reveal">Your support powers creativity, Minecraft development, and the next generation of mods and plugins.</p>
+          <p class="sub reveal">Every contribution helps me create more content, develop new projects, and improve the HangerPlayz community.</p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary btn-shine" href="#support" id="heroSupport"><span data-icon="heart"></span> Support Now</a>
+            <a class="btn btn-ghost" href="#leaderboard"><span data-icon="trophy"></span> Explore Leaderboard</a>
+          </div>
+          <p class="made-for reveal">Made for the community. Powered by your support.</p>
+        </div>
+        <div class="hero-art reveal" aria-hidden="false">
+          <div class="hero-ring"></div>
+          <div class="hero-ring r2"></div>
+          <img class="hero-logo" src="assets/images/logo-live.gif" width="420" height="420" alt="HangerPlayz pixel-art character wearing a pumpkin head and purple outfit" fetchpriority="high">
+          <span class="float-chip c1"><span data-icon="cube"></span> Fabric</span>
+          <span class="float-chip c2"><span data-icon="plug"></span> Plugins</span>
+          <span class="float-chip c3"><span data-icon="bolt"></span> Optimization</span>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#support" aria-label="Scroll to support section"><span></span></a>
+    </section>
+
+    <!-- ============ SUPPORT / PAYMENT ============ -->
+    <section class="section" id="support" data-section="support">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Support</p>
+          <h2>Back the next project</h2>
+          <p class="muted">Pay with any UPI app. Pick an amount, scan the QR, or open your UPI app. Support is always optional.</p>
+        </header>
+
+        <div class="pay-grid">
+          <!-- QR card -->
+          <article class="qr-card reveal" id="qrCard" aria-labelledby="qrTitle">
+            <div class="qr-border"></div>
+            <div class="qr-inner">
+              <h3 id="qrTitle"><span data-icon="qr"></span> Scan to pay with UPI</h3>
+              <div class="qr-frame">
+                <img id="qrImage" src="assets/images/upi-qr.png" width="444" height="516" alt="HangerPlayz UPI payment QR code for its.shivamsr@fam" decoding="async">
+              </div>
+              <p class="qr-help">Open any UPI app, tap <strong>Scan</strong>, point at this code, then enter your amount and confirm the payee name <strong>HangerPlayz</strong>.</p>
+              <div class="qr-actions">
+                <button class="btn btn-ghost btn-sm" type="button" id="qrEnlarge"><span data-icon="expand"></span> Enlarge QR</button>
+                <button class="btn btn-ghost btn-sm" type="button" id="copyUpi"><span data-icon="copy"></span> Copy UPI ID</button>
+              </div>
+              <p class="upi-line"><span class="muted">UPI ID</span> <code id="upiIdText"></code></p>
+            </div>
+          </article>
+
+          <!-- Amount + summary -->
+          <div class="pay-side">
+            <section class="card reveal" aria-labelledby="amtTitle">
+              <h3 id="amtTitle">Choose an amount</h3>
+              <div class="amount-grid" id="amountGrid" role="group" aria-label="Preset amounts"></div>
+              <form class="custom-amount" id="customForm" novalidate autocomplete="off">
+                <label for="customAmount">Or enter a custom amount (INR)</label>
+                <div class="input-row">
+                  <span class="prefix" aria-hidden="true">₹</span>
+                  <input id="customAmount" name="amount" type="text" inputmode="decimal" placeholder="e.g. 49" maxlength="10" aria-describedby="customHint customError">
+                  <button type="button" class="btn btn-ghost btn-sm" id="resetAmount">Clear</button>
+                </div>
+                <p class="hint" id="customHint"></p>
+                <p class="error" id="customError" role="alert" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="card summary reveal" aria-labelledby="sumTitle" id="summaryCard">
+              <h3 id="sumTitle">Payment summary</h3>
+              <dl class="summary-list">
+                <div><dt>Payee</dt><dd id="sumPayee"></dd></div>
+                <div><dt>UPI ID</dt><dd id="sumUpi"></dd></div>
+                <div class="sum-amount"><dt>Amount</dt><dd><span id="sumAmount" class="amount-value">—</span></dd></div>
+                <div><dt>Currency</dt><dd>INR (₹)</dd></div>
+                <div><dt>Method</dt><dd id="sumMethod">UPI — scan QR or open a UPI app</dd></div>
+                <div><dt>Status</dt><dd><span class="badge warn">Not verified</span> <span class="muted small">Complete the payment in your UPI app</span></dd></div>
+              </dl>
+              <p class="small muted">Confirm the payee name and amount inside your UPI app before paying.</p>
+            </section>
+
+            <section class="card reveal" aria-labelledby="payTitle">
+              <h3 id="payTitle">Pay</h3>
+              <button class="btn btn-primary btn-block btn-shine" type="button" id="payBtn"><span data-icon="phone"></span> Pay Using UPI App</button>
+              <div class="app-row" id="appRow" role="group" aria-label="Open a specific UPI app"></div>
+              <div class="copy-row">
+                <button class="btn btn-ghost btn-sm" type="button" id="copyUpi2"><span data-icon="copy"></span> Copy UPI ID</button>
+                <button class="btn btn-ghost btn-sm" type="button" id="copyDetails"><span data-icon="copy"></span> Copy payment details</button>
+                <button class="btn btn-ghost btn-sm" type="button" id="useQr"><span data-icon="qr"></span> Use QR instead</button>
+              </div>
+              <p class="notice" id="payNotice" role="status" aria-live="polite" hidden></p>
+              <p class="notice info"><span data-icon="info"></span><span><strong>Opening a UPI app does not confirm a payment.</strong> This website can't see your payment. Real confirmation needs a verified backend or payment provider. App names are shown only for convenience — no partnership with those brands is implied.</span></p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PAYMENT STEPS ============ -->
+    <section class="section alt" id="how" data-section="how">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Guide</p>
+          <h2>How to support, step by step</h2>
+        </header>
+        <ol class="steps" id="steps"></ol>
+      </div>
+    </section>
+
+    <!-- ============ LEADERBOARD ============ -->
+    <section class="section" id="leaderboard" data-section="leaderboard">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Leaderboard</p>
+          <h2>Hall of Supporters</h2>
+          <p class="muted">Only verified contributions appear here.</p>
+        </header>
+        <div id="leaderboardBody" aria-live="polite"></div>
+        <p class="data-note small muted" id="leaderboardNote"></p>
+      </div>
+    </section>
+
+    <!-- ============ RECENT ============ -->
+    <section class="section alt" id="recent" data-section="recent">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Activity</p>
+          <h2>Recent Support</h2>
+        </header>
+        <div id="recentBody" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ MILESTONES ============ -->
+    <section class="section" id="milestones" data-section="milestones">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Goals</p>
+          <h2>Community Milestones</h2>
+          <p class="muted">Milestones unlock based on the number of verified supporters.</p>
+        </header>
+        <div class="card milestone-card reveal" id="milestoneBody"></div>
+      </div>
+    </section>
+
+    <!-- ============ COMMUNITY WALL ============ -->
+    <section class="section alt" id="wall" data-section="wall">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Messages</p>
+          <h2>Community Wall</h2>
+          <p class="muted">Messages from verified supporters, shown only after moderation.</p>
+        </header>
+        <div id="wallBody" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ LATEST UPDATES ============ -->
+    <section class="section" id="updates" data-section="updates">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">News</p>
+          <h2>Latest Updates</h2>
+        </header>
+        <div id="updatesBody"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section alt" id="about" data-section="about">
+      <div class="container about-grid">
+        <div class="about-art reveal">
+          <div class="about-glow"></div>
+          <img src="assets/images/logo-live.gif" width="360" height="360" loading="lazy" alt="Animated HangerPlayz pixel-art character">
+        </div>
+        <div class="about-copy">
+          <header class="section-head left reveal">
+            <p class="eyebrow">About</p>
+            <h2>About HangerPlayz</h2>
+          </header>
+          <p class="reveal">HangerPlayz is an independent Minecraft creator and developer. The channel and projects focus on making the game better for everyone, with community-first development.</p>
+          <div class="project-grid" id="projectGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL ============ -->
+    <section class="section" id="connect" data-section="connect">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Connect</p>
+          <h2>Find Me Around the Internet</h2>
+        </header>
+        <div class="social-grid" id="socialGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section alt" id="faq" data-section="faq">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Frequently asked questions</h2>
+        </header>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#home"><img src="assets/images/logo-face.png" width="40" height="40" loading="lazy" alt="HangerPlayz logo"><span>HangerPlayz</span></a>
+        <p class="muted">Independent Minecraft content, Fabric mods and plugins, made for the community.</p>
+        <div class="foot-social" id="footSocial"></div>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Navigate</h4>
+        <ul class="foot-links">
+          <li><a href="#home">Home</a></li><li><a href="#support">Support</a></li><li><a href="#leaderboard">Leaderboard</a></li>
+          <li><a href="#milestones">Milestones</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Payment support</h4>
+        <p class="muted small">Payments are made directly in your UPI app to <strong id="footUpi"></strong>. Pending or failed payment? Check your UPI app's history and your bank, then use Quick Help or the social links to reach out.</p>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>© 2026 HangerPlayz. All rights reserved.</p>
+      <p class="muted">Thank you for supporting independent Minecraft development.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING ACTIONS ============ -->
+  <div class="fab-stack" id="fabStack">
+    <div class="audio-panel" id="audioPanel" hidden>
+      <label class="switch"><input type="checkbox" id="musicToggle"><span></span> Ambient music</label>
+      <label class="vol">Volume <input type="range" id="musicVol" min="0" max="100" value="35" aria-label="Music volume"></label>
+      <label class="switch"><input type="checkbox" id="sfxToggle"><span></span> UI sounds</label>
+      <p class="small muted">Everything is muted until you turn it on. Sounds are generated in your browser.</p>
+    </div>
+    <button class="fab" type="button" id="audioBtn" aria-label="Sound settings" aria-expanded="false" aria-controls="audioPanel"></button>
+    <button class="fab fab-top" type="button" id="toTop" aria-label="Back to top"></button>
+    <button class="fab fab-chat" type="button" id="chatFab" aria-label="Open Quick Help" aria-expanded="false" aria-controls="chatWindow"></button>
+  </div>
+
+  <!-- ============ QUICK HELP CHAT ============ -->
+  <section class="chat" id="chatWindow" role="dialog" aria-label="Quick Help" aria-modal="false" hidden>
+    <header class="chat-head">
+      <button class="icon-btn" type="button" id="chatBack" aria-label="Back to topics" hidden></button>
+      <div class="chat-title"><strong>Quick Help</strong><span class="small muted">Answers about payments &amp; the site</span></div>
+      <button class="icon-btn" type="button" id="chatClose" aria-label="Close Quick Help"></button>
+    </header>
+    <div class="chat-body" id="chatBody" tabindex="0" aria-live="polite"></div>
+  </section>
+
+  <!-- ============ QR LIGHTBOX ============ -->
+  <dialog class="lightbox" id="qrDialog" aria-label="Enlarged payment QR code">
+    <div class="lightbox-card">
+      <button class="icon-btn lightbox-close" type="button" id="qrClose" aria-label="Close enlarged QR"></button>
+      <img src="assets/images/upi-qr.png" width="444" height="516" alt="Enlarged HangerPlayz UPI payment QR code for its.shivamsr@fam" decoding="async">
+      <p class="small muted">Scan with any UPI app. Press Esc or tap outside to close.</p>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Cursor layers (created only on devices with a mouse) -->
+  <div id="cursor" class="cursor" aria-hidden="true"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/components/audio.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/hero.js"></script>
+  <script src="js/components/payment.js"></script>
+  <script src="js/components/data-sections.js"></script>
+  <script src="js/components/about-social.js"></script>
+  <script src="js/components/quickhelp.js"></script>
+  <script src="js/components/faq.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/components/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

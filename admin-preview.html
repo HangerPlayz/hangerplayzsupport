@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Dashboard — Frontend Preview (HangerPlayz)</title>
+  <link rel="icon" type="image/png" href="assets/images/logo-face.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="preview-banner" role="note">FRONTEND PREVIEW ONLY — not functional and not secure. There is no login here on purpose. A real admin dashboard must be built on a server with real authentication (see BACKEND.md).</div>
+  <main class="section">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Concept</p>
+        <h1 style="font-size:2.4rem">Admin dashboard (preview)</h1>
+        <p class="muted">This page shows what the admin area will manage once a backend exists. All numbers are blank because there is no data source. Do not deploy this page as an "admin login".</p>
+      </header>
+
+      <div class="stat-row" aria-label="Basic support statistics (no data connected)">
+        <div class="stat"><span class="muted small">Verified supporters</span><b>—</b></div>
+        <div class="stat"><span class="muted small">Verified total (INR)</span><b>—</b></div>
+        <div class="stat"><span class="muted small">Pending messages</span><b>—</b></div>
+        <div class="stat"><span class="muted small">Next milestone</span><b>—</b></div>
+      </div>
+
+      <div class="admin-grid">
+        <section class="card admin-card"><h3>Verified support records <span class="badge demo">Needs backend</span></h3>
+          <ul><li>List payments confirmed by the payment provider webhook</li><li>Search, filter by date, export CSV</li><li>Private details (full transaction IDs) stay admin-only</li></ul></section>
+        <section class="card admin-card"><h3>Supporter messages <span class="badge demo">Needs backend</span></h3>
+          <ul><li>Review each message: approve, reject or hide</li><li>Only "approved" messages are returned by the public /wall endpoint</li><li>Optional profanity filter before the review queue</li></ul></section>
+        <section class="card admin-card"><h3>Community milestones <span class="badge demo">Needs backend</span></h3>
+          <ul><li>Edit milestone goals and titles</li><li>Counts are computed from verified records only</li></ul></section>
+        <section class="card admin-card"><h3>Announcements &amp; updates <span class="badge demo">Needs backend</span></h3>
+          <ul><li>Create, edit and delete "Latest Updates" posts</li><li>Served by the public /updates endpoint</li></ul></section>
+        <section class="card admin-card"><h3>Social links <span class="badge demo">Needs backend</span></h3>
+          <ul><li>Edit links (currently edited in js/config.js)</li></ul></section>
+        <section class="card admin-card"><h3>Authentication <span class="badge demo">Required</span></h3>
+          <ul><li>Server-side sessions or OAuth/SSO, HTTPS only, hashed passwords, 2FA</li><li>Rate limiting and audit log</li><li>Never check admin passwords in browser JavaScript</li></ul>
+          <button class="btn btn-ghost btn-sm" type="button" disabled>Sign in (not available)</button></section>
+      </div>
+      <p style="text-align:center;margin-top:32px"><a class="btn btn-ghost" href="index.html">Back to the website</a></p>
+    </div>
+  </main>
+</body>
+</html>
